@@ -1,0 +1,7 @@
+<?php
+    $blockId = 'home-page-block';
+    $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($blockId);
+    if ($block) {
+        echo $block->toHtml();
+    }
+?>
