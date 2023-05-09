@@ -7,5 +7,12 @@
             </arguments>
         </referenceBlock>
         <referenceBlock name="wish-list-link" remove="true"/>
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="custom_footer_block" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">custom_footer_block</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
     </body>
 </page>
