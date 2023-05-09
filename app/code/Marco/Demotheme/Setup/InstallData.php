@@ -18,14 +18,25 @@ class InstallData implements InstallDataInterface
 
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
-        $blockData = [
-            'title' => 'Custom footer block',
-            'identifier' => 'custom_footer_block',
-            'stores' => [0], // 0 means 'All Store Views'
-            'is_active' => 1,
-            'content' => 'Cutom footer block content here!'
+        $blockDataArray = [
+            [
+                'title' => 'Custom footer block',
+                'identifier' => 'custom_footer_block',
+                'stores' => [0], // 0 means 'All Store Views'
+                'is_active' => 1,
+                'content' => 'Cutom footer block content here!'
+            ],
+            [
+                'title' => 'Custom homepage block',
+                'identifier' => 'custom_homepage_block',
+                'stores' => [0], // 0 means 'All Store Views'
+                'is_active' => 1,
+                'content' => 'Custom homepage block content here!'
+            ],
         ];
 
-        $this->blockFactory->create()->setData($blockData)->save();
+        foreach ($blockDataArray as $blockData) {
+            $this->blockFactory->create()->setData($blockData)->save();
+        }
     }
 }
